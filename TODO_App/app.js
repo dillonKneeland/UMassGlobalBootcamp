@@ -52,6 +52,9 @@ container.addEventListener('click', event => {
 
 function finalizeTodo(event) {
     event.target.setAttribute('contenteditable', 'false');
+    if (event.target.textContent == '') {
+        event.target.parentElement.remove();
+    }
     let uuid = uuidv4();
     event.target.parentElement.setAttribute('data-id', uuid);
     let savedTodos = JSON.parse(localStorage.getItem('todos'));
@@ -69,7 +72,6 @@ function finalizeTodo(event) {
 
 function hydrate() {
     let todos = JSON.parse(localStorage.getItem('todos'));
-    console.log(todos);
     for (const uuid in todos) {
         let template = document.querySelector('#todo-item-template');
         let newitem = template.content.cloneNode(true);
