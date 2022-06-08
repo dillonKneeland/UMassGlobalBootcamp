@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <title>To-Do App</title>
+</head>
+<body>
+    <div id="btn-info" class="bi bi-info-circle"></div>
+    <header>
+        <h1 id="page-title"><span class="bi bi-pencil"></span>
+        &nbsp;To-Do&nbsp;
+        <span class="bi bi-pencil"></span></h1>
+    </header>
+    <div class="container">
+        <!-- Todo items go here -->
+        <button type="button" id="btn-addnew">
+            <span class="bi bi-plus-circle"></span> New To-Do
+        </button>
+    </div>
+
+    <div id="license-modal">
+        <div class="modal-content">
+            <h2>Contributions</h2>
+            <p>
+                <a href="https://github.com/uuidjs/uuid">uuid</a> by Robert Kieffer
+                <br><br>
+                The MIT License (MIT)
+                <br><br>
+                Copyright (c) 2010-2020 Robert Kieffer and other contributors
+                <br><br>
+                Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+                <br><br>
+                The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+                <br><br>
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                <hr>
+                <a href="https://github.com/twbs/icons">Bootstrap Icons</a> from The Bootstrap Authors
+                <br><br>
+                The MIT License (MIT)
+                <br><br>
+                Copyright (c) 2019-2021 The Bootstrap Authors
+                <br><br>
+                Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+                <br><br>
+                The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+                <br><br>
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                <hr>
+                <a href="https://github.com/hankchizljaw/modern-css-reset">Modern CSS Reset</a> by Andy Bell
+                <br><br>
+                MIT License
+                <br><br>
+                Copyright (c) 2019 Andy Bell and other contributors
+                <br><br>
+                Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+                <br><br>
+                The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+                <br><br>
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                <hr>
+                <a href="https://fonts.google.com/specimen/Nunito">Nunito</a> by Vernon Adams, Cyreal, Jacques Le Bailly
+                <br><br>
+                Licensed under the Open Font License
+            </p>
+        </div>
+    </div>
+
+    <!-- The template we'll use to create new todo items -->
+    <template id="todo-item-template">
+        <div class="todo-item">
+            <div contenteditable="true" class="todo-content" data-completed="false"></div>
+            <div class="bi bi-check-lg btn-complete"></div>
+            <div class="bi bi-x-lg btn-delete"></div>
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script>
+    <script src="./app.js" type="text/javascript"></script>
+</body>
+</html>
