@@ -60,6 +60,7 @@ function finalizeTodo(event) {
     event.target.setAttribute('contenteditable', 'false');
     if (event.target.textContent == '') {
         event.target.parentElement.remove();
+        return;
     }
     let uuid = uuidv4();
     event.target.parentElement.setAttribute('data-id', uuid);
