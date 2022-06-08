@@ -38,10 +38,16 @@ container.addEventListener('click', event => {
     if (event.target.classList.contains('btn-complete')) {
         let todoItem = event.target.parentElement;
         let state = todoItem.getAttribute('data-completed');
-        todoItem.setAttribute('data-completed', state == 'true' ? false : true)
+        if (state === 'true') {
+            newstate = false;
+            todoItem.setAttribute('data-completed', 'false');
+        } else if (state === 'false' || state === null) {
+            newstate = true;
+            todoItem.setAttribute('data-completed', 'true');
+        }
         let todos = JSON.parse(localStorage.getItem('todos'));
-        todos[todoItem.getAttribute('data-id')].completed = false;
-        localStorage.setItem(todos, JSON.stringify(todos));
+        todos[todoItem.getAttribute('data-id')].completed = newstate;
+        localStorage.setItem('todos', JSON.stringify(todos));
     } else if (event.target.classList.contains('btn-delete')) {
         let todos = JSON.parse(localStorage.getItem('todos'));
         delete todos[event.target.parentElement.getAttribute('data-id')];
@@ -73,6 +79,11 @@ function finalizeTodo(event) {
 function hydrate() {
     let todos = JSON.parse(localStorage.getItem('todos'));
     for (const uuid in todos) {
+        if (todos[uuid].content === '') {
+            delete todos[uuid];
+            localStorage.setItem('todos', JSON.stringify(todos));
+            continue;
+        }
         let template = document.querySelector('#todo-item-template');
         let newitem = template.content.cloneNode(true);
         let newNode = newitem.querySelector('.todo-item');
