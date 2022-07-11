@@ -1,0 +1,68 @@
+:root {
+  --c-bg-base: #D3F3EE;
+  --c-bg-shadow: #30B09D;
+  --c-text-base: #d56375;
+
+  --c-card-red: #FFABAB;
+  --c-card-blue: #6EB5FF;
+  --c-card-green: #BFFCC6;
+  --c-card-orange: #FDCF76;
+  --c-card-purple: #D3C0F9;
+  --c-card-flipped: #576462;
+}
+
+body {
+  background-color: var(--c-bg-base);
+  color: var(--c-text-base);
+  font-family: 'Nunito', sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+#game-field {
+  width: 80%;
+  max-width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 10px 10px;
+}
+
+#game-field div {
+  box-shadow: 3px 3px 4px 1px var(--c-bg-shadow);
+  border-radius: 10px;
+  transition: box-shadow 500ms;
+  height: 300px;
+}
+#game-field div:hover {
+  box-shadow: 5px 5px 7px 3px var(--c-bg-shadow);
+}
+
+#game-field div[data-color="red"] {
+  background-color: var(--c-card-red);
+}
+#game-field div[data-color="blue"] {
+  background-color: var(--c-card-blue);
+}
+#game-field div[data-color="green"] {
+  background-color: var(--c-card-green);
+}
+#game-field div[data-color="orange"] {
+  background-color: var(--c-card-orange);
+}
+#game-field div[data-color="purple"] {
+  background-color: var(--c-card-purple);
+}
+#game-field div.flipped {
+  background-color: var(--c-card-flipped);
+}
